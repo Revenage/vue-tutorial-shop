@@ -11,5 +11,20 @@ new Vue({
   el: '#app',
   router,
   components: { App },
-  template: '<App/>',
+  template: `
+        <div>
+            <p>{{counter}}</p>
+            <button v-on:click="incrementCounter">increment ++</button>
+        </div>
+  `,
+  data: function () {
+      return {
+          counter: 0
+      }
+  },
+  methods: {
+      incrementCounter() {
+          this.counter++
+      }
+  }
 });
